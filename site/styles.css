@@ -1,0 +1,986 @@
+/* Основные стили */
+:root {
+    --primary-color: #FF8C66;
+    --secondary-color: #FFB399;
+    --accent-color: #FF704D;
+    --light-color: #FFE5CC;
+    --dark-color: #E64D00;
+    --text-color: #333;
+    --light-text: #fff;
+    --bg-color: #FFF5EE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--dark-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Шапка */
+.header {
+    background-color: var(--light-text);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 30px;
+}
+
+.nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav ul li a:hover:after,
+.nav ul li a.active:after {
+    width: 100%;
+}
+
+/* Герой секция */
+.hero {
+    padding: 100px 0 80px;
+    background: linear-gradient(135deg, var(--light-color), var(--secondary-color));
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero-content h2 {
+    font-size: 42px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Особенности игры */
+.game-features {
+    padding: 80px 0;
+}
+
+.game-features h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    font-size: 36px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--light-text);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+    border-radius: 50%;
+}
+
+.feature-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Игровой процесс */
+.gameplay-section {
+    padding: 80px 0;
+}
+
+.gameplay-section .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.gameplay-content {
+    flex: 1;
+}
+
+.gameplay-content h2 {
+    color: var(--primary-color);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.gameplay-image {
+    flex: 1;
+}
+
+.gameplay-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Прогресс */
+.progress-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.progress-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    font-size: 36px;
+}
+
+.progress-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.progress-card {
+    background-color: var(--light-text);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary-color);
+}
+
+.progress-card.done {
+    border-left-color: #4CAF50;
+}
+
+.progress-card h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.progress-card p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 1s ease-in-out;
+}
+
+.progress-card.done .progress-fill {
+    background-color: #4CAF50;
+}
+
+.progress-section .btn {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 250px;
+}
+
+/* Университет */
+.university-section {
+    padding: 60px 0;
+    background-color: var(--light-text);
+}
+
+.university-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.university-logo {
+    flex: 0 0 200px;
+}
+
+.university-logo img {
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.university-info {
+    flex: 1;
+}
+
+.university-info h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.university-info p {
+    margin-bottom: 10px;
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-text);
+    padding: 60px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+    color: var(--light-text);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    margin-bottom: 0;
+}
+
+.footer-links h4 {
+    color: var(--light-text);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: var(--light-text);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-links ul li a:hover {
+    opacity: 1;
+}
+
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .hero .container,
+    .gameplay-section .container,
+    .university-section .container {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+padding-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .gameplay-content {
+        order: 1;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .gameplay-image {
+        order: 2;
+    }
+    
+    .university-logo {
+        margin-bottom: 30px;
+    }
+    
+    .university-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav ul li {
+        margin: 0 15px 10px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 15px;
+    }
+    
+    .game-features h2,
+    .gameplay-content h2,
+    .progress-section h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* Стили для страницы "О проекте" */
+.about-hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #E9967A, var(--dark-color));
+    text-align: center;
+    color: var(--light-text);
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.about-hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.about-content {
+    padding: 80px 0;
+}
+
+.about-text h2 {
+    color: var(--primary-color);
+    margin: 40px 0 20px;
+    font-size: 32px;
+}
+
+.about-text h2:first-child {
+    margin-top: 0;
+}
+
+.features-list {
+    margin: 20px 0 30px;
+    list-style-type: none;
+}
+
+.features-list li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.features-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.game-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.spec-item {
+    background-color: var(--light-text);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.spec-item h3 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.about-screenshots {
+    margin-top: 80px;
+}
+
+.about-screenshots h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 32px;
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.screenshot-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.screenshot-item p {
+    text-align: center;
+    font-style: italic;
+    color: var(--dark-color);
+    margin-bottom: 0;
+}
+
+/* Стили для страницы "Команда" */
+.team-hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #E9967A, var(--dark-color));
+    text-align: center;
+    color: var(--light-text);
+}
+
+.team-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.team-hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.team-members {
+    padding: 80px 0;
+}
+
+.team-description {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 18px;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.member-card {
+    background-color: var(--light-text);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 25px;
+}
+
+.member-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-weight: 500;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.member-contribution {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+/* Стили для страницы "Прогресс" */
+.progress-hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #E9967A, var(--dark-color));
+    text-align: center;
+    color: var(--light-text);
+}
+
+.progress-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.progress-hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.progress-content {
+    padding: 80px 0;
+}
+
+.progress-content h2 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.progress-items {
+    margin-bottom: 60px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--light-text);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.progress-item.done {
+    border-left: 5px solid #4CAF50;
+}
+.progress-item.pending {
+    border-left: 5px solid #FFC107;
+    opacity: 0.8;
+}
+
+.progress-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+    border-radius: 50%;
+}
+
+.progress-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.progress-info h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.progress-info p {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.progress-timeline {
+    margin-top: 80px;
+}
+
+.progress-timeline h2 {
+    margin-bottom: 40px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 100%;
+    width: 2px;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.timeline-item.done .timeline-date {
+    background-color: #4CAF50;
+}
+
+.timeline-item.current .timeline-date {
+    background-color: #FFC107;
+    color: var(--text-color);
+}
+
+.timeline-item.pending .timeline-date {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: var(--light-text);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Стили для страницы "Галерея" */
+.gallery-hero {
+    padding: 100px 0;
+    background-image: url("images/marketloc.png");
+    text-align: center;
+    color: var(--light-text);
+}
+
+.gallery-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    background-color: #E9967A;
+}
+
+.gallery-content {
+    padding: 80px 0;
+}
+
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 10px 10px;
+}
+
+.tab-btn.active {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.gallery-tab-content {
+    display: none;
+}
+
+.gallery-tab-content.active {
+    display: block;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--light-text);
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Адаптивность для новых страниц */
+@media (max-width: 768px) {
+    .about-hero h1,
+    .team-hero h1,
+    .progress-hero h1,
+    .gallery-hero h1 {
+        font-size: 36px;
+    }
+    
+    .about-text h2,
+    .progress-content h2 {
+        font-size: 28px;
+    }
+    
+    .timeline:before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        padding-left: 60px;
+    }
+    
+    .timeline-date {
+        width: 40px;
+        padding: 5px;
+        font-size: 14px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+@media (max-width: 480px) {
+    .members-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+}
